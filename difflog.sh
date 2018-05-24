@@ -34,6 +34,22 @@ then cp -rf $original   $copy
         echo $original 'is different, has changed from past known file'
         echo "$output" >> /var/log/filechange.log
         echo -e 'Output Logged as \n \n' $output '\n'
+	echo 'Sending Mail'
+
+/usr/sbin/sendmail -t -oi  <<EOF
+To:<your email id>
+Subject: Config File changed.
+
+Configurations changes took place for
+
+$original
+
+Please find the details below :-
+
+$output
+
+EOF
+
 else
         echo 'Files are same'
 fi
