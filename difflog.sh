@@ -19,7 +19,7 @@ copy=$2
 fileexist=$2
 
 # Copy a file from actual file to be compared as it will not be originally present.
-exist=`ls $fileexist | grep elasticsearch.yml | wc -l`
+exist=`ls $fileexist | wc -l`
 if [ $exist -eq 0 ]
 then cp $original $fileexist
 else echo 'Comparing with an already present file in the directory.'
