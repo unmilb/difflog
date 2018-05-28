@@ -10,4 +10,5 @@ How to use?
   Where- <br />
 	index-changes is name of directory <br />
   <br />
-*  Insert the email id at end of script where to send alerts.
+*  Insert the email id at end of script where to send alerts. <br />
+  To:<your-email-id>
