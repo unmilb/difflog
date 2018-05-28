@@ -11,4 +11,4 @@ How to use?
 	index-changes is name of directory <br />
   <br />
 *  Insert the email id at end of script where to send alerts. <br />
-  To:<your-email-id>
+  To: ## your-email-id ##
