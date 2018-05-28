@@ -19,7 +19,7 @@ copy=$2
 fileexist=$2
 
 # Copy a file from actual file to be compared as it will not be originally present.
-exist=`ls $fileexist | wc -l`
+exist=`ls $fileexist | grep $3 | wc -l`
 if [ $exist -eq 0 ]
 then cp $original $fileexist
 else echo 'Comparing with an already present file in the directory.'
@@ -37,7 +37,8 @@ then cp -rf $original   $copy
 	echo 'Sending Mail'
 
 /usr/sbin/sendmail -t -oi  <<EOF
-To:<your email id>
+To:<your-email-id>
+
 Subject: Config File changed.
 
 Configurations changes took place for
